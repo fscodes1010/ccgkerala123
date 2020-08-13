@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+  <meta charset="UTF-8">
+  <title>CCG Kerala</title> <!-- Title is used in desktop, but should be ignored in mobile apps. -->
+  <meta name="viewport" content="viewport-fit=cover, width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
+  <meta http-equiv="Content-Security-Policy" content="default-src * filesystem: cdvfile: file: data: gap: https://ssl.gstatic.com moodleappfs:; img-src * filesystem: gap: data: cdvfile: file: https://ssl.gstatic.com android-webview-video-poster: blob: moodleappfs:; style-src 'self' 'unsafe-inline' filesystem: cdvfile: file: moodleappfs:; script-src 'self' 'unsafe-inline' 'unsafe-eval' http://localhost:* filesystem: cdvfile: file: moodleappfs:; media-src * filesystem: cdvfile: file: gap: blob: moodleappfs:">
+  <meta name="format-detection" content="telephone=no">
+  <meta name="msapplication-tap-highlight" content="no">
+
+  <link href="https://fonts.googleapis.com/css2?family=Abel&display=swap" rel="stylesheet">
+  
+
+
+  <!-- Workaround for Cordova/Angular conflict:
+       http://weblogs.thinktecture.com/thomas/2017/02/cordova-vs-zonejs-or-why-is-angulars-document-event-listener-not-in-a-zone.html-->
+  <script>
+  (function () {
+    'use strict';
+
+    var EvTarget = EventTarget || Element; // EventTarget doesn't exist in iOS 8 and 9.
+
+    window.addEventListener = function () {
+      EvTarget.prototype.addEventListener.apply(this, arguments);
+    };
+
+    window.removeEventListener = function () {
+      EvTarget.prototype.removeEventListener.apply(this, arguments);
+    };
+
+    document.addEventListener = function () {
+      EvTarget.prototype.addEventListener.apply(this, arguments);
+    };
+
+    document.removeEventListener = function () {
+      EvTarget.prototype.removeEventListener.apply(this, arguments);
+    };
+  })();
+  </script>
+
+  <link rel="icon" type="image/x-icon" href="assets/icon/favicon.ico">
+  <link rel="manifest" href="manifest.json">
+  <meta name="theme-color" content="#4e8ef7">
+
+  <!-- add to homescreen for ios -->
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black">
+
+  <!-- cordova.js required for cordova apps -->
+  <script src="cordova.js"></script>
+
+  <!-- un-comment this code to enable service worker
+  <script>
+    if ('serviceWorker' in navigator) {
+      navigator.serviceWorker.register('service-worker.js')
+        .then(() => console.log('service worker installed'))
+        .catch(err => console.error('Error', err));
+    }
+  </script>-->
+
+  <link href="build/main.css" rel="stylesheet">
+
+  <script src="lib/mathjax/MathJax.js?delayStartupUntil=configured"></script>
+
+</head>
+<body>
+
+  <!-- Ionic's root component and where the app will load -->
+  <ion-app></ion-app>
+
+  <!-- The polyfills js is generated during the build process -->
+  <script src="build/polyfills.js"></script>
+
+  <!-- The vendor js is generated during the build process
+       It contains all of the dependencies in node_modules -->
+  <script src="build/vendor.js"></script>
+
+  <!-- The main bundle js is generated during the build process -->
+  <script src="build/main.js"></script>
+
+</body>
+</html>
+
+<style>
+  .toolbar-background{
+    background: #60b9db;
+  }
+
+  .tabs-md .tabbar {
+    background: #121011;
+}
+
+ion-app.app-root .core-tabs-bar .tab-slide[aria-selected=true] {
+    color: #60b9db !important;
+    border-bottom-color: #60b9db !important;
+}
+
+.tabs-md .tab-button[aria-selected=true] .tab-button-icon, .tabs-md ion-app.app-root .core-tabs-bar .tab-slide[aria-selected=true] .tab-button-icon, ion-app.app-root .core-tabs-bar .tabs-md .tab-slide[aria-selected=true] .tab-button-icon {
+    color: #60b9db;
+}
+
+ 
+ion-app.app-root .core-horizontal-scroll {
+background: #ffffff;
+}
+
+[dir="ltr"] ion-app.app-root core-block .item-divider {
+background:#ffffff;
+}
+
+
+ion-app.ios {
+  font-family: 'Abel', sans-serif;
+  font-size: 1.4rem;
+  background-color: #e9e9e9;
+}
+
+ion-app.md {
+  font-family: 'Abel', sans-serif;
+  font-size: 1.4rem;
+  background-color: #e9e9e9;
+}
+
+[title="Change site"]{
+  display: none;
+}
+
+[title="Help"]{
+  display: none;
+}
+
+[title="Open Source Licences"]{
+  display: none;
+}
+
+
+[href="https://moodle.net/moodle-app-privacy/"]{
+  display: none;
+}
+
+
+
+
+ion-app.app-root ion-select.core-button-select, ion-app.app-root .core-button-select {
+  color: #60b9db;
+  
+}
+
+ion-app.app-root ion-select{
+  color: #60b9db;
+}
+
+[dir="ltr"] ion-app.app-root .safe-area-page, [dir="ltr"] ion-app.app-root .safe-padding-horizontal, [dir="rtl"] ion-app.app-root .safe-area-page, [dir="rtl"] ion-app.app-root .safe-padding-horizontal {
+background: #ffffff;
+}
+
+.radio-md .radio-inner {
+background: #60b9db;
+}
+.radio-md .radio-checked {
+    border-color: #60b9db;
+}
+
+.item-radio-checked.item-md ion-label {
+    color: #60b9db;
+}
+
+ion-app.app-root ion-select.core-button-select .select-icon .select-icon-inner, ion-app.app-root .core-button-select .select-icon .select-icon-inner {
+  color: #60b9db;
+}
+
+
+ion-app.app-root addon-calendar-calendar .addon-calendar-day.today .addon-calendar-day-number span {
+
+  background-color: #60b9db;
+}
+
+.fab-md {
+  background-color: #60b9db;
+}
+
+.button-clear-md {
+  color: #60b9db;
+}
+
+.content-md {
+    color: #1a1a1a;
+    background-color: #ffffff;
+}
+
+</style>
